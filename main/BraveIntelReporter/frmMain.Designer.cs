@@ -37,17 +37,17 @@
             this.lblFailed = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.lblMonitoringFiles = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuViewMap = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOutputMinimal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuOutputStandard = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOutputVerbose = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSetEveToBackground = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuOutputStandard = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtMonitoringFiles = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,19 +56,19 @@
             this.txtIntel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIntel.Location = new System.Drawing.Point(10, 27);
+            this.txtIntel.Location = new System.Drawing.Point(12, 21);
             this.txtIntel.Multiline = true;
             this.txtIntel.Name = "txtIntel";
             this.txtIntel.ReadOnly = true;
             this.txtIntel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtIntel.Size = new System.Drawing.Size(606, 335);
+            this.txtIntel.Size = new System.Drawing.Size(601, 270);
             this.txtIntel.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 365);
+            this.label1.Location = new System.Drawing.Point(12, 303);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 1;
@@ -78,7 +78,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 390);
+            this.label2.Location = new System.Drawing.Point(12, 328);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 2;
@@ -88,7 +88,7 @@
             // 
             this.lblReported.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblReported.AutoSize = true;
-            this.lblReported.Location = new System.Drawing.Point(75, 365);
+            this.lblReported.Location = new System.Drawing.Point(75, 303);
             this.lblReported.Name = "lblReported";
             this.lblReported.Size = new System.Drawing.Size(13, 13);
             this.lblReported.TabIndex = 3;
@@ -98,7 +98,7 @@
             // 
             this.lblFailed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblFailed.AutoSize = true;
-            this.lblFailed.Location = new System.Drawing.Point(75, 390);
+            this.lblFailed.Location = new System.Drawing.Point(75, 328);
             this.lblFailed.Name = "lblFailed";
             this.lblFailed.Size = new System.Drawing.Size(13, 13);
             this.lblFailed.TabIndex = 4;
@@ -107,29 +107,19 @@
             // notifyIcon1
             // 
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "BraveReporter is minimized (still reporting)";
+            this.notifyIcon1.Text = "EveIntelReporter is minimized (still reporting)";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 365);
+            this.label3.Location = new System.Drawing.Point(124, 303);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Monitoring Files: ";
-            // 
-            // lblMonitoringFiles
-            // 
-            this.lblMonitoringFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblMonitoringFiles.AutoSize = true;
-            this.lblMonitoringFiles.Location = new System.Drawing.Point(268, 365);
-            this.lblMonitoringFiles.Name = "lblMonitoringFiles";
-            this.lblMonitoringFiles.Size = new System.Drawing.Size(10, 13);
-            this.lblMonitoringFiles.TabIndex = 6;
-            this.lblMonitoringFiles.Text = "-";
             // 
             // menuStrip1
             // 
@@ -139,7 +129,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(627, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(624, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -174,16 +164,22 @@
             // mnuOutputMinimal
             // 
             this.mnuOutputMinimal.Name = "mnuOutputMinimal";
-            this.mnuOutputMinimal.Size = new System.Drawing.Size(152, 22);
+            this.mnuOutputMinimal.Size = new System.Drawing.Size(121, 22);
             this.mnuOutputMinimal.Text = "Minimal";
             this.mnuOutputMinimal.Click += new System.EventHandler(this.mnuOutputMinimal_Click);
+            // 
+            // mnuOutputStandard
+            // 
+            this.mnuOutputStandard.Name = "mnuOutputStandard";
+            this.mnuOutputStandard.Size = new System.Drawing.Size(121, 22);
+            this.mnuOutputStandard.Text = "Standard";
             // 
             // mnuOutputVerbose
             // 
             this.mnuOutputVerbose.Checked = true;
             this.mnuOutputVerbose.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnuOutputVerbose.Name = "mnuOutputVerbose";
-            this.mnuOutputVerbose.Size = new System.Drawing.Size(152, 22);
+            this.mnuOutputVerbose.Size = new System.Drawing.Size(121, 22);
             this.mnuOutputVerbose.Text = "Verbose";
             this.mnuOutputVerbose.Click += new System.EventHandler(this.mnuOutputVerbose_Click);
             // 
@@ -208,30 +204,36 @@
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // mnuOutputStandard
+            // txtMonitoringFiles
             // 
-            this.mnuOutputStandard.Name = "mnuOutputStandard";
-            this.mnuOutputStandard.Size = new System.Drawing.Size(152, 22);
-            this.mnuOutputStandard.Text = "Standard";
+            this.txtMonitoringFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMonitoringFiles.Location = new System.Drawing.Point(207, 297);
+            this.txtMonitoringFiles.Multiline = true;
+            this.txtMonitoringFiles.Name = "txtMonitoringFiles";
+            this.txtMonitoringFiles.ReadOnly = true;
+            this.txtMonitoringFiles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMonitoringFiles.Size = new System.Drawing.Size(406, 48);
+            this.txtMonitoringFiles.TabIndex = 8;
+            this.txtMonitoringFiles.WordWrap = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 411);
-            this.Controls.Add(this.lblMonitoringFiles);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(624, 349);
             this.Controls.Add(this.lblFailed);
             this.Controls.Add(this.lblReported);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIntel);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.txtMonitoringFiles);
+            this.Controls.Add(this.label3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmMain";
-            this.Text = "Brave Intel Reporter";
+            this.Text = "Eve Intel Reporter";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Resize += new System.EventHandler(this.frmMain_Resize);
@@ -251,7 +253,6 @@
         private System.Windows.Forms.Label lblFailed;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblMonitoringFiles;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuViewMap;
@@ -262,6 +263,7 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuSetEveToBackground;
         private System.Windows.Forms.ToolStripMenuItem mnuOutputStandard;
+        private System.Windows.Forms.TextBox txtMonitoringFiles;
     }
 }
 

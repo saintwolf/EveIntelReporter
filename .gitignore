@@ -16,6 +16,8 @@ $RECYCLE.BIN/
 
 *.pfx
 *.suo
+*.exe
+*.user
 
 # =========================
 # Operating System Files
@@ -38,3 +40,10 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+##########################
+# build output
+##########################
+main/BraveIntelReporter/obj/
+main/BraveIntelReporter/bin/
+

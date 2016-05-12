@@ -24,7 +24,7 @@ namespace BraveIntelReporter
             {
                 if (!mutex.WaitOne(0, false))
                 {
-                    MessageBox.Show("Brave Intel Reporter is already running!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    MessageBox.Show("Eve Intel Reporter is already running!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     return;
                 }
 

@@ -292,7 +292,7 @@ namespace BraveIntelReporter
                 if (state == STATE.RUNNING || state == STATE.DOWNTIME) appendText(string.Format("Intel Files Changed. Old Files: {0}, New Files: {1}", oldfiles, newfiles));
                 if (state == STATE.DOWNTIME) setState(STATE.START);
             }
-            lblMonitoringFiles.Invoke(new MethodInvoker(() => lblMonitoringFiles.Text = report));
+            txtMonitoringFiles.Invoke(new MethodInvoker(() => txtMonitoringFiles.Text = report));
         }
 
         private void FileCreated(object sender, FileSystemEventArgs e)

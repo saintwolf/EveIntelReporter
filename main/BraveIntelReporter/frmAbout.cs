@@ -15,14 +15,16 @@ namespace BraveIntelReporter
         public frmAbout()
         {
             InitializeComponent();
-            labelCompanyName.Text = "Brave Collective";
-            lblDevelopers.Text = "Developed by: Serinus Gareth for use with Kiu Nakamura's intel map.";
+
+            lblDevelopers.Text = "Developed by: Serinus Gareth for use with Kiu Nakamura's intel map.\nThis generic version forked by Islay Tzash - https://github.com/islaytzash.";
 
             if (ApplicationDeployment.IsNetworkDeployed)
                 labelVersion.Text = "Version " + ReportLine.Version;
             else labelVersion.Text = "Development Version " + ReportLine.Version;
 
-            txtDescription.Text = string.Empty; 
+            txtDescription.Text = string.Empty;
+            txtDescription.AppendText("Version 1.1.0.10 - Make project more generic, convert external Brave references to EVE.   Replace icon with one from Deviant Artist regisztralt - http://regisztralt.deviantart.com/art/Eve-Online-v2-PNG-ICO-format-519680023");
+            txtDescription.AppendText("\r\n");
             txtDescription.AppendText("Version 1.1.0.9 - Better (but not perfect) multi-monitor support for the \"Eve in Background\" feature.  Option to supress intel reporting.");
             txtDescription.AppendText("\r\n");
             txtDescription.AppendText("Version 1.1.0.8 - Fixed the icon in the taskbar.");
@@ -132,5 +134,14 @@ namespace BraveIntelReporter
             this.Close();
         }
 
+        private void labelCompanyName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDevelopers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
