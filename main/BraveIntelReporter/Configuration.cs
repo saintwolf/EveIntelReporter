@@ -107,7 +107,7 @@ namespace BraveIntelReporter
             WebClient client = new WebClient();
             try
             {
-                client.DownloadFile("http://serinus.us/eve/intelGlobalConfig.xml", System.IO.Path.Combine(MyFolder, "intelGlobalConfig.xml"));
+                client.DownloadFile("http://intel.hellspirates.org/intelGlobalConfig.xml", System.IO.Path.Combine(MyFolder, "intelGlobalConfig.xml"));
                 report = "Global config updated.";
             }
             catch (Exception)
