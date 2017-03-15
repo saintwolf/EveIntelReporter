@@ -15,6 +15,7 @@ using System.Timers;
 using System.Windows.Automation;
 using System.Windows.Forms;
 using System.Xml;
+using RestSharp;
 
 namespace BraveIntelReporter
 {
@@ -512,22 +513,31 @@ namespace BraveIntelReporter
             init();
 
             setState(STATE.START);
+            ReportIntel("Test12324324324 3IK-7O");
 
         }
         private bool InvalidAuthToken = false;
         private void ReportIntel(string lastline, string status = "")
         {
             Encoding myEncoding = System.Text.UTF8Encoding.UTF8;
-            WebClient client = new WebClient();
+            //WebClient client = new WebClient();
+            RestClient client = new RestClient(Configuration.ReportServer);
             try
             {
                 if (lastline.Contains("EVE System > Channel MOTD:")) return;
                 lastline = lastline.Replace('"', '\'');
                 string postMessage = new ReportLine(lastline, status).ToJson();
 
-                byte[] KiuResponse = client.UploadData(Configuration.ReportServer, "PUT", myEncoding.GetBytes(postMessage));
+                RestRequest request = new RestRequest("EveIntelServer/report", Method.PUT);
+                request.AddParameter("application/json", postMessage, ParameterType.RequestBody);
 
-                if (myEncoding.GetString(KiuResponse) == "OK\n") reported++;
+                IRestResponse response = client.Execute(request);
+
+                if (response.Content == "OK\n") reported++;
+
+                //byte[] KiuResponse = client.UploadData(Configuration.ReportServer, "PUT", myEncoding.GetBytes(postMessage));
+
+                //if (myEncoding.GetString(KiuResponse) == "OK\n") reported++;
             }
             catch (Exception ex)
             {
